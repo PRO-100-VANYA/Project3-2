@@ -1,0 +1,7 @@
+﻿cmake_minimum_required (VERSION 3.8)
+project (Project3-1 CXX)
+add_executable (Project3-1 "main.cpp")
+file(GLOB inout_lib "library/*.cpp")
+add_library(inoutlib STATIC ${inout_lib})
+target_include_directories(inoutlib PUBLIC included)
+target_link_libraries(Project3-1 inoutlib)
